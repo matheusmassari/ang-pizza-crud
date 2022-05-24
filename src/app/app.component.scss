@@ -1,0 +1,31 @@
+mat-toolbar {
+  margin-bottom: 2rem;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.example-card {
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+.content {
+  padding: 3rem;
+}
+
+img {
+    margin: 0 auto;
+    border-radius: 1rem;
+    object-fit: cover;
+    width: 100%;
+}
+mat-card-title-group {
+    display: flex;
+    flex-direction: row;        
+    align-content: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+
+

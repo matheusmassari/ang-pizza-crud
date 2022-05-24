@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>Cadastrar Pizza</h1>
+<div mat-dialog-content>
+  <form [formGroup]="pizzaForm">
+    <mat-form-field id="form-field-dialog" appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input formControlName="name" matInput placeholder="Nome" />
+    </mat-form-field>
+    <mat-form-field id="form-field-dialog" appearance="outline">
+      <mat-label>Endereço de Imagem (URL)</mat-label>
+      <input
+        formControlName="imageUrl"
+        matInput
+        placeholder="http://unsplash.com/example"
+      />
+    </mat-form-field>
+    <mat-form-field id="form-field-dialog" appearance="outline">
+      <mat-label>Preço</mat-label>
+      <input
+        matInput
+        placeholder="Preço"
+        type="number"
+        formControlName="price"
+      />
+    </mat-form-field>
+    <h2>Ingredientes:</h2>
+    <mat-form-field id="form-field-dialog" appearance="outline">
+      <mat-label>Ingredientes</mat-label>
+      <textarea formControlName="ingredients" matInput></textarea>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button mat-dialog-close color="warn">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="addPizza()">
+    {{ actionBtn }}
+  </button>
+  <!-- {{ pizzaForm.value | json }} -->
+</div>

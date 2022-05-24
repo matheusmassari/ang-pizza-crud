@@ -1,1 +1,51 @@
-<h1>Hello world</h1>
+<mat-toolbar color="warn">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>local_pizza</mat-icon>
+  </button>
+  <span>Pizza Crud App</span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button color="secondary" (click)="openDialog()">
+    Cadastrar Pizza
+  </button>
+</mat-toolbar>
+
+<h1 style="text-align: center">Cardápio Atual</h1>
+
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="1rem grid">
+    <div
+      fxFlex="25%"
+      fxFlex.md="50%"
+      fxFlex.sm="50%"
+      fxFlex.xs="100%"
+      *ngFor="let pizza of pizzaArray"
+    >
+      <mat-card class="example-card">
+        <mat-card-title-group>
+          <mat-card-title style="margin-top: 0.5rem; margin-left: 0.5rem;">{{ pizza.name }}</mat-card-title>
+          <div class="btn-wrapper">
+            <button mat-icon-button color="primary" (click)="editPizza(pizza)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              color="warn"
+              (click)="deletePizza(pizza.id)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </mat-card-title-group>
+        <mat-card-content>
+          <img mat-card-xl-image src="{{ pizza.imageUrl }}" />
+          <p>Ingredientes:</p>
+          <p>{{ pizza.ingredients }}.</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
